@@ -18,30 +18,30 @@ export const getters = {
 
 export const actions = {
     async fetchStudents({ commit }) {
-        const response = await axios.get('http://localhost:1261/api/students');
+        const response = await axios.get('https://school-management-app-api.herokuapp.com/api/students');
             commit('getStudents', response.data.data);
     },
     async fetchStates({ commit }){
-        const response = await axios.get('http://localhost:1261/api/states');
+        const response = await axios.get('https://school-management-app-api.herokuapp.com/api/states');
         commit('getStates', response.data.data)
     },
     async fetchInstitutions({ commit }){
-        const response = await axios.get('http://localhost:1261/api/institutions');
+        const response = await axios.get('https://school-management-app-api.herokuapp.com/api/institutions');
         commit('getInstitutions', response.data.data)
     },
     async fetchDepartments({ commit }){
-        const response = await axios.get('http://localhost:1261/api/departments');
+        const response = await axios.get('https://school-management-app-api.herokuapp.com/api/departments');
         commit('getDepartments', response.data.data)
     },
     async addStudent({commit}, payload) {
         const response = await axios.post(
-        'http://localhost:1261/api/students', payload.student )
+        'https://school-management-app-api.herokuapp.com/api/students', payload.student )
         this.$toast.success('Student Added Successfully')
         payload.clearForm()
         commit('newStudent', response.data.data)
     },
     async viewStudent({commit}, id) {
-        const response = await axios.get(`http://localhost:1261/api/students/${id}`)
+        const response = await axios.get(`https://school-management-app-api.herokuapp.com/api/students/${id}`)
         commit('viewAStudent', response.data.data)
     }
 };

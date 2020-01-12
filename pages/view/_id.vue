@@ -173,7 +173,10 @@
                                 <label class="col-sm-3 col-form-label font-weight-bold">Department</label>
                                 <div class="col-sm-9">
                                      <select v-model="student.department" class="form-control">
-                                        <option v-for="department in allDepartments" :key="department.id" :value="department.name">{{department.name}}</option>                                        
+                                        <option v-for="department in allDepartments" 
+                                        :key="department.id" 
+                                        :value="department.name"
+                                        >{{department.name}}</option>                                        
                                     </select>                                                                                                                                                                        
                                 </div>
                             </div>
@@ -216,13 +219,13 @@ export default {
     },
     methods: {
         edit() { 
-            this.$axios.get(`http://localhost:1261/api/students/${this.$route.params.id}`)
+            this.$axios.get(`https://school-management-app-api.herokuapp.com/api/student/${this.$route.params.id}`)
             .then(response => {
                 this.student = response.data.data;
             })
         },
         updateStudent() {
-          this.$axios.put(`http://localhost:1261/api/students/${this.$route.params.id}`, this.student)
+          this.$axios.put(`https://school-management-app-api.herokuapp.com/api/student/${this.$route.params.id}`, this.student)
             .then(response => {
                 this.students = response.data.data
                 })
@@ -232,13 +235,13 @@ export default {
             .then(this.editStudent = false)
         },
         viewStudent(id) {
-            this.$axios.get(`http://localhost:1261/api/students/${id}`)
+            this.$axios.get(`https://school-management-app-api.herokuapp.com/api/student/${id}`)
             .then(response => {
                 this.students = response.data.data;
             })
         },
         deleteStudent(id){
-                this.$axios.delete(`http://localhost:1261/api/students/${id}`)
+                this.$axios.delete(`https://school-management-app-api.herokuapp.com/api/student/${id}`)
                 .then(() => {
                     this.$router.push({name: 'index'})
                     this.$toast.success('Student Deleted Successfully')

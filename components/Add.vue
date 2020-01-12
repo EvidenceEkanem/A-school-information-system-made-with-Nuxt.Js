@@ -109,20 +109,20 @@ export default {
     name: "add",
     data() {
         return {
-              student: {
-                   email: "",
-                    first_name: "",
-                    last_name: "",
-                    gender: "",
-                    marital_status: "",
-                    phone: "",
-                    dob: "",
-                    state: "",
-                    institution: "",
-                    department: ""
-              },
-                emailBlured : false,
-                valid : false, 
+            student: {
+                email: "",
+                first_name: "",
+                last_name: "",
+                gender: "",
+                marital_status: "",
+                phone: "",
+                dob: "",
+                state: "",
+                institution: "",
+                department: ""
+            },
+            emailBlured : false,
+            valid : false, 
         }
     },
     methods: {
