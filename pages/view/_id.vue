@@ -142,7 +142,9 @@
                                 <label class="col-sm-3 col-form-label font-weight-bold">State</label>
                                 <div class="col-sm-9">
                                     <select v-model="student.state" class="form-control">
-                                        <option v-for="state in allStates" :key="state.id" :value="state.name">{{ state.name }}</option>                                        
+                                        <option v-for="state in allStates" 
+                                        :key="state.id" 
+                                        :value="state.name">{{ state.name }}</option>                                        
                                     </select>                                                                                                                                                                             
                                 </div>
                             </div>
