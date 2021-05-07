@@ -1,3 +1,4 @@
+URL: https://evi-simple-school-crud.netlify.app/
 # school-information-system
 
 > My majestic Nuxt.js project
